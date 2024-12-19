@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
 
-salario = st.number_input('Salario Mensual',value=3500000)
+salario = st.number_input('Salario Mensual',value=3500000,format="{:0,.2f}")
 
 
 st.write("{:0,.2f}".format(float(salario)))
