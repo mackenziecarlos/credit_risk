@@ -1,3 +1,3 @@
 import streamlit as st
 
-st.title("Modrlo de Análisis de Crédito FEMAP")
+st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
