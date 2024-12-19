@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
 
-salario = st.number_input('Salario Mensual',value=3500000,format='{:,d})
+salario = st.number_input('Salario Mensual',value=3500000,format={:,d})
 edad = st.text_input('Edad', value=25, type="default", label_visibility="visible")
 ningreso = st.slider('Nivel de Ingreso',1,6,12)
 antiguedad = st.slider('Antiguedad',0,4,20)
