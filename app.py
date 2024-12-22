@@ -57,3 +57,4 @@ if st.button("Calcular Riesgo de Crédito"):
   p2=load_xg.predict_proba(np.array(vp))[0, 1]
   st.write('''# p1 ''')
   st.write('La probabilidad de incumplimiento futuro del asociado es del',"{:0,.1f}%".format(float(p2*100)))
+  clear_button = st.empty()
