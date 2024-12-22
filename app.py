@@ -15,7 +15,6 @@ st.markdown(''':red[Gasto Financiero:]:black[Valor de todas las cuotas de los cr
 cap_des = st.slider('Capacidad de Descuento %',0,50,25)
 capital = st.number_input('Monto del Credito',label_visibility="visible")
 st.write("{:0,.0f}".format(float(capital)))
-ind_cap = capital/salario
 empresa = st.selectbox("Empresa",('Mapfre Generales','Mapfre Vida','Andiasistencia','Cesvicolombia','FEMAP','Solunion','Otros'))
 option = st.selectbox(
     "How would you like to be contacted?",
@@ -32,3 +31,4 @@ garantia = st.radio("Tipo de Garantia",
         "Never stop learning.",
     ],
 )
+#ind_cap = capital/salario
