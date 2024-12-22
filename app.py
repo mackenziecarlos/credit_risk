@@ -46,8 +46,8 @@ if st.button("Calcular Riesgo de Crédito"):
   emp_index_v=int(emp_index_v)
   NOMBREDEST_index_v=int(NOMBREDEST_index_v)
   TIPOGARANT_index_v=int(TIPOGARANT_index_v)
+  NOMBREGARA_index_v=int(NOMBREGARA_index_v)
   vp=[[cap_des,salario,mun_index_v,plazo,gasto_financiero,emp_index_v,NOMBREDEST_index_v,edad,antiguedad,ind_cap,TIPOGARANT_index_v,capital,NOMBREGARA_index_v]]
-  st.write(type(mun_index_v),type(emp_index_v),type(NOMBREDEST_index_v),type(TIPOGARANT_index_v),type(NOMBREGARA_index_v))
   st.write(load_xg.predict(np.array(vp)))
   if (load_xg.predict(np.array(vp))==1):
     p1='Solicitud Credito Rechazada'
