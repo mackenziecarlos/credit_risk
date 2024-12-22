@@ -5,7 +5,7 @@ import sklearn
 
 st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
 st.divider()
-salario = st.number_input('Salario Mensual',format="0,0.0f")
+salario = st.number_input('Salario Mensual',format=":0,0.0f")
 st.write("{:0,.0f}".format(float(salario)))
 edad = st.text_input('Edad', value=25, type="default", label_visibility="visible")
 plazo = st.slider('Plazo en Meses',0,180,12)
