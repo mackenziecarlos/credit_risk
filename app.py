@@ -34,6 +34,18 @@ load_xg=pickle.load(open('credit_risk_model.pkl','rb'))
 if st.button("Calcular Riesgo de Crédito"):
   ind_cap = capital/salario
   st.write("{:0,.2f}".format(float(ind_cap)))
+  plazo=float(plazo)
+  capital=float(capital)
+  edad=int(edad)
+  antiguedad=int(antiguedad)
+  salario=float(salario)
+  gasto_financiero=float(gasto_financiero)
+  cap_des=float(cap_des)
+  ind_cap=float(ind_cap)
+  mun_index_v=int(mun_index_v)
+  emp_index_v=int(emp_index_v)
+  NOMBREDEST_index_v=int(NOMBREDEST_index_v)
+  TIPOGARANT_index_v=int(TIPOGARANT_index_v)
   vp=[[cap_des,salario,mun_index_v,plazo,gasto_financiero,emp_index_v,NOMBREDEST_index_v,edad,antiguedad,ind_cap,TIPOGARANT_index_v,capital,NOMBREGARA_index_v]]
   
   if (load_xg.predict(np.array(vp))==1):
