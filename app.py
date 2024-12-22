@@ -62,7 +62,7 @@ if st.button("Calcular Riesgo de Crédito"):
   st.write('La probabilidad de incumplimiento futuro del asociado es del',"{:0,.1f}%".format(float(p2*100)))
   st.divider()
   if st.button("Realizar Otro Analisis"):
-    st.session_state.value = "Foo"
+    st.session_state.value = "Realizar Otro Analisis"
     st.rerun()
 
 
