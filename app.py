@@ -22,7 +22,7 @@ option = st.selectbox(
     "How would you like to be contacted?",
     ("Email", "Home phone", "Mobile phone"),
 )
-municipio = st.selectbox("Municipio",('Bogota','Medellin','Cali','Otros')(
+municipio = st.selectbox("Municipio",('Bogota','Medellin','Cali','Otros'))
 destino = st.selectbox("Destino",('Polizas e Impuestos','Promocion','Extraordinario','Prima',
                        'Recreacion','Compra de Cartera','otros'))
 garantia = st.radio("Tipo de Garantia",
