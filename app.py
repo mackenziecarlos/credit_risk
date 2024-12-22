@@ -29,7 +29,8 @@ NOMBREDEST_index ={'Polizas e Impuestos':1,'Promocion':2,'Extraordinario':4,'Pri
 NOMBREDEST_index_v = NOMBREDEST_index[destino]
 TIPOGARANT_index ={"Real":1, "Personal":0}
 TIPOGARANT_index_v=TIPOGARANT_index[garantia]
-NOMBREGARA_index_v= {"Pagare":0, "Poliza Cumplimiento":1,"Pignoracion":2,"Hipotecaria":3}
+NOMBREGARA_index= {"Pagare":0, "Poliza Cumplimiento":1,"Pignoracion":2,"Hipotecaria":3}
+NOMBREGARA_index_v=NOMBREGARA_index[tgarantia]
 load_xg=pickle.load(open('credit_risk_model.pkl','rb'))
 if st.button("Calcular Riesgo de Crédito"):
   ind_cap = capital/salario
