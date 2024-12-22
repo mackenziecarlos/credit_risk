@@ -1,6 +1,5 @@
 import streamlit as st
 import numpy as np
-import pickle
 import sklearn
 
 st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
@@ -11,7 +10,7 @@ edad = st.text_input('Edad', value=25, type="default", label_visibility="visible
 plazo = st.slider('Plazo en Meses',0,180,12)
 gasto_financiero = st.number_input('Gasto Financiero')
 st.write("{:0,.0f}".format(float(gasto_financiero)))
-st.markdown(''':red[Gasto Financiero:]:black[Valor de todas las cuotas de los créditos activos inluyendo la futura cuota del nuevo crédito de ser aprobado]''')
+st.markdown(''':red[Gasto Financiero]= :gray[Valor de todas las cuotas de los créditos activos inluyendo la futura cuota del nuevo crédito de ser aprobado]''')
 cap_des = st.slider('Capacidad de Descuento %',0,50,25)
 capital = st.number_input('Monto del Credito',label_visibility="visible")
 st.write("{:0,.0f}".format(float(capital)))
