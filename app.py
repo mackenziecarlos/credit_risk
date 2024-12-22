@@ -1,6 +1,5 @@
 import streamlit as st
 import numpy as np
-import sklearn
 
 st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
 st.divider()
