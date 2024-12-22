@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pickle
+from streamlit_js_eval import streamlit_js_eval
 
 st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
 st.divider()
@@ -60,6 +61,8 @@ if st.button("Calcular Riesgo de Crédito"):
   st.write('''# p1 ''')
   st.write('La probabilidad de incumplimiento futuro del asociado es del',"{:0,.1f}%".format(float(p2*100)))
   st.divider()
+  if st.button("Reload page"):
+    streamlit_js_eval(js_expressions="parent.window.location.reload()")
   
 
  
