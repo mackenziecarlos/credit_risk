@@ -35,10 +35,10 @@ if st.button("Calcular Riesgo de Crédito"):
   ind_cap = capital/salario
   st.write("{:0,.2f}".format(float(ind_cap)))
   vp=[[cap_des,salario,mun_index_v,plazo,gasto_financiero,emp_index_v,NOMBREDEST_index_v,edad,antiguedad,ind_cap,TIPOGARANT_index_v,capital,NOMBREGARA_index_v]]
-  if (load_xg.predict(vp)==1):
+  if (load_xg.predict(np.array(vp))==1):
     p1='Solicitud Credito Rechazada'
   else:
     p1='Solicitud Credito Aprobada'
-  p2=load_xg.predict_proba(vp)[0, 1]
+  p2=load_xg.predict_proba(np.array(vp))[0, 1]
   st.write('''# p1 ''')
   st.write('La probabilidad de incumplimiento futuro del asociado es del',"{:0,.1f}%".format(float(p2*100)))
