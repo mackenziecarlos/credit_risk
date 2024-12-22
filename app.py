@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pickle
 import sklearn
-import xgboost
 
 st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
 st.divider()
