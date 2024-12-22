@@ -35,7 +35,7 @@ if st.button("Calcular Riesgo de Crédito"):
   ind_cap = capital/salario
   st.write("{:0,.2f}".format(float(ind_cap)))
   vp=[[cap_des,salario,mun_index_v,plazo,gasto_financiero,emp_index_v,NOMBREDEST_index_v,edad,antiguedad,ind_cap,TIPOGARANT_index_v,capital,NOMBREGARA_index_v]]
-  if (load_xg.predict(vp)=1):
+  if (load_xg.predict(vp)==1):
     p1='Solicitud Credito Rechazada'
   else:
     p1='Solicitud Credito Aprobada'
