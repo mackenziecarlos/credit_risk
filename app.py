@@ -4,6 +4,37 @@ import pickle
 
 st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
 st.divider()
+
+if "reset" not in st.session_state:
+    st.session_state.reset = False
+
+with st.container():
+    default_values = {"Salario Mensual": 0, "Edad": 25, "Antiguedad del Asociado (Años)": 2, "Plazo en Meses": 12,
+                     'Gasto Financiero':0,'Capacidad de Descuento %':25}
+
+    inp1 = default_values["Salario Mensual"] if st.session_state.reset else st.session_state.get("Salario Mensual", default_values["Salario Mensual"])
+    inp2 = default_values["Edad"] if st.session_state.reset else st.session_state.get("Edad", default_values["Edad"])
+    inp3 = default_values["Antiguedad del Asociado (Años)"] if st.session_state.reset else st.session_state.get("Antiguedad del Asociado (Años)", default_values["Antiguedad del Asociado (Años)"])
+    inp4 = default_values["Plazo en Meses"] if st.session_state.reset else st.session_state.get("Plazo en Meses", default_values["Plazo en Meses"])
+    inp5 = default_values["Gasto Financiero"] if st.session_state.reset else st.session_state.get("Gasto Financiero", default_values["Gasto Financiero"])
+    inp6 = default_values["Capacidad de Descuento %"] if st.session_state.reset else st.session_state.get("Capacidad de Descuento %", default_values["Capacidad de Descuento %"])
+    
+    st.session_state.inp1 = st.number_input("Salario Mensual", value=inp1)
+    st.session_state.inp2 = st.text_input("Edad", value=inp2)
+    st.session_state.inp3 = st.slider("Antiguedad del Asociado (Años)", value=inp3)
+    st.session_state.inp4 = st.slider("Plazo en Meses", value=inp4)
+    st.session_state.inp5 = st.number_input("Gasto Financiero", value=inp5)
+    st.session_state.inp6 = st.slider("Capacidad de Descuento %", value=inp6)
+  
+
+    # Reset button
+    if st.button("Reset values"):
+        st.session_state.reset = True  # Mark reset as True if button is pressed
+        st.experimental_rerun()  # Rerun the script
+    else:
+        st.session_state.reset = False  # Reset the reset flag
+
+
 salario = st.number_input('Salario Mensual')
 st.write("{:0,.0f}".format(float(salario)))
 edad = st.text_input('Edad', value=25, type="default", label_visibility="visible")
@@ -60,31 +91,4 @@ if st.button("Calcular Riesgo de Crédito"):
   st.divider()
   
 
-  if "reset" not in st.session_state:
-      st.session_state.reset = False
-  
-  with st.container():
-      default_values = {"Salario Mensual": 0, "Edad": 25, "Antiguedad del Asociado (Años)": 2, "Plazo en Meses": 12,
-                       'Gasto Financiero':0,'Capacidad de Descuento %':25}
-  
-      inp1 = default_values["Salario Mensual"] if st.session_state.reset else st.session_state.get("Salario Mensual", default_values["Salario Mensual"])
-      inp2 = default_values["Edad"] if st.session_state.reset else st.session_state.get("Edad", default_values["Edad"])
-      inp3 = default_values["Antiguedad del Asociado (Años)"] if st.session_state.reset else st.session_state.get("Antiguedad del Asociado (Años)", default_values["Antiguedad del Asociado (Años)"])
-      inp4 = default_values["Plazo en Meses"] if st.session_state.reset else st.session_state.get("Plazo en Meses", default_values["Plazo en Meses"])
-      inp5 = default_values["Gasto Financiero"] if st.session_state.reset else st.session_state.get("Gasto Financiero", default_values["Gasto Financiero"])
-      inp6 = default_values["Capacidad de Descuento %"] if st.session_state.reset else st.session_state.get("Capacidad de Descuento %", default_values["Capacidad de Descuento %"])
-      
-      st.session_state.inp1 = st.number_input("Salario Mensual", value=inp1)
-      st.session_state.inp2 = st.text_input("Edad", value=inp2)
-      st.session_state.inp3 = st.slider("Antiguedad del Asociado (Años)", value=inp3)
-      st.session_state.inp4 = st.slider("Plazo en Meses", value=inp4)
-      st.session_state.inp5 = st.number_input("Gasto Financiero", value=inp5)
-      st.session_state.inp6 = st.slider("Capacidad de Descuento %", value=inp6)
-    
-  
-      # Reset button
-      if st.button("Reset values"):
-          st.session_state.reset = True  # Mark reset as True if button is pressed
-          st.experimental_rerun()  # Rerun the script
-      else:
-          st.session_state.reset = False  # Reset the reset flag
+ 
