@@ -19,7 +19,6 @@ destino = st.selectbox("Destino",('Polizas e Impuestos','Promocion','Extraordina
                        'Recreacion','Compra de Cartera','otros'))
 garantia = st.radio("Tipo de Garantia",
     ["Real", "Personal"])
-st.button("Calcular Riesgo de Crédito", type="primary")
 if st.button("Calcular Riesgo de Crédito"):
     ind_cap = capital/salario
     st.write("{:0,.2f}".format(float(ind_cap)))
