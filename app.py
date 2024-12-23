@@ -54,7 +54,7 @@ if st.button("Calcular Riesgo de Crédito"):
     p1='Solicitud Credito Rechazada'
   else:
     p1='Solicitud Credito Aprobada'
-  st.markdown(#p1)
+  st.write(p1)
   p2=load_xg.predict_proba(np.array(vp))[0, 1]
   
   fig = go.Figure(go.Indicator(
