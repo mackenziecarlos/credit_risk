@@ -54,9 +54,7 @@ if st.button("Calcular Riesgo de Crédito"):
     st.markdown(''':red[Solicitud Credito Rechazada]''')
   else:
     st.markdown(''':green[Solicitud Credito Aprobada]''')
-  st.write(p1)
   p2=load_xg.predict_proba(np.array(vp))[0, 1]
-  
   fig = go.Figure(go.Indicator(
       mode = "gauge+number",
       number = {'suffix': "% Probabilidad de Mora", 'font': {'size': 20}},
