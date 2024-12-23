@@ -59,6 +59,7 @@ if st.button("Calcular Riesgo de Crédito"):
   else:
     p1='Solicitud Credito Aprobada'
   p2=load_xg.predict_proba(np.array(vp))[0, 1]
+  
   fig = go.Figure(go.Indicator(
       mode = "gauge+number",
       number = {'suffix': "% Probabilidad de Mora", 'font': {'size': 20}},
@@ -84,7 +85,7 @@ if st.button("Calcular Riesgo de Crédito"):
       yaxis={'showgrid': False, 'range':[0,1]},
       # plot_bgcolor='rgba(0,0,0,0)'
       )
-  
+  st.plotly_chart(fig, use_container_width=True)
   if st.button("Realizar Otro Analisis"):
     st.rerun()
 
