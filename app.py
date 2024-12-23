@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pickle
+import pandas as pd
 
 
 st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
@@ -39,17 +40,17 @@ if st.button("Calcular Riesgo de Crédito"):
   st.write("{:0,.2f}".format(float(ind_cap)))
   plazo=float(plazo)
   capital=float(capital)
-  edad=int(edad)
-  antiguedad=int(antiguedad)
+  edad=float(edad)
+  antiguedad=float(antiguedad)
   salario=float(salario)
   gasto_financiero=float(gasto_financiero)
   cap_des=float(cap_des)
   ind_cap=float(ind_cap)
-  mun_index_v=int(mun_index_v)
-  emp_index_v=int(emp_index_v)
-  NOMBREDEST_index_v=int(NOMBREDEST_index_v)
-  TIPOGARANT_index_v=int(TIPOGARANT_index_v)
-  NOMBREGARA_index_v=int(NOMBREGARA_index_v)
+  mun_index_v=float(mun_index_v)
+  emp_index_v=float(emp_index_v)
+  NOMBREDEST_index_v=float(NOMBREDEST_index_v)
+  TIPOGARANT_index_v=float(TIPOGARANT_index_v)
+  NOMBREGARA_index_v=float(NOMBREGARA_index_v)
   vp=[[cap_des,salario,mun_index_v,plazo,gasto_financiero,emp_index_v,NOMBREDEST_index_v,edad,antiguedad,ind_cap,TIPOGARANT_index_v,capital,NOMBREGARA_index_v]]
   st.write(vp)
   st.write(load_xg.predict(np.array(vp)))
