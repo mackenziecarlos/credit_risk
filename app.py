@@ -4,8 +4,7 @@ import pickle
 import pandas as pd
 from xgboost import XGBClassifier
 
-dfv=pd.read_csv('D:/Mega/Personal/Maestria Big Data IMF/Contenido/14. Trabajo Final/Archivos trabajados/dft.csv',
-                  dtype = {'CEDULASOCI': str,'PAGARE': str,'CODSUBDEST':str})
+dfv=pd.read_csv('dftv.csv')
 load_xg=pickle.load(open('credit_risk_model2.pkl','rb'))
 vp1=np.array(dfv)
 r1=load_xg.predict(np.array(vp1))
