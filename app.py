@@ -11,6 +11,7 @@ r1=load_xg.predict(np.array(vp1))
 st.write(r1) 
 r2=load_xg.predict_proba(np.array(vp1))
 st.write(r2) 
+st.dataframe(dfv)
                    
 
 st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
