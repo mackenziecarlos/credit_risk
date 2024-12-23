@@ -8,7 +8,7 @@ dfv=pd.read_csv('D:/Mega/Personal/Maestria Big Data IMF/Contenido/14. Trabajo Fi
                   dtype = {'CEDULASOCI': str,'PAGARE': str,'CODSUBDEST':str})
 load_xg=pickle.load(open('credit_risk_model2.pkl','rb'))
 vp1=np.array(dfv)
-r1=load_xg.predict(np.array(vp1)
+r1=load_xg.predict(np.array(vp1))
 st.write(r1) 
 r2=load_xg.predict_proba(np.array(vp1))
 st.write(r2) 
