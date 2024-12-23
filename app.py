@@ -2,7 +2,17 @@ import streamlit as st
 import numpy as np
 import pickle
 import pandas as pd
+from xgboost import XGBClassifier
 
+dfv=pd.read_csv('D:/Mega/Personal/Maestria Big Data IMF/Contenido/14. Trabajo Final/Archivos trabajados/dft.csv',
+                  dtype = {'CEDULASOCI': str,'PAGARE': str,'CODSUBDEST':str})
+load_xg=pickle.load(open('credit_risk_model2.pkl','rb'))
+vp1=np.array(dfv)
+r1=load_xg.predict(np.array(vp1)
+st.write(r1) 
+r2=load_xg.predict_proba(np.array(vp1))
+st.write(r2) 
+                   
 
 st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
 st.divider()
