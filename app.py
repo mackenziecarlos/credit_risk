@@ -3,17 +3,7 @@ import numpy as np
 import pickle
 import pandas as pd
 from xgboost import XGBClassifier
-
-dfv=pd.read_csv('dftv.csv')
-load_xg=pickle.load(open('credit_risk_model2.pkl','rb'))
-vp1=np.array(dfv)
-r1=load_xg.predict(np.array(vp1))
-st.write(r1) 
-r2=load_xg.predict_proba(np.array(vp1))
-st.write(r2) 
-st.dataframe(dfv)
-                   
-
+import plotly.graph_objects as go
 st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
 st.divider()
 salario = st.number_input('Salario Mensual')
@@ -69,9 +59,32 @@ if st.button("Calcular Riesgo de Crédito"):
   else:
     p1='Solicitud Credito Aprobada'
   p2=load_xg.predict_proba(np.array(vp))[0, 1]
-  st.write('''# p1 ''')
-  st.write('La probabilidad de incumplimiento futuro del asociado es del',"{:0,.1f}%".format(float(p2*100)))
-  st.divider()
+  fig = go.Figure(go.Indicator(
+      mode = "gauge+number",
+      number = {'suffix': "% Probabilidad de Mora", 'font': {'size': 20}},
+      value = p2*100,
+      domain = {'x': [0,1], 'y': [0,1]},
+      gauge = {
+          'axis': {'range': [None, 100], 'tickwidth': 1, 'tickcolor': "darkblue"},
+          'bar': {'color': "darkblue"},
+          'bgcolor': "white",
+          'borderwidth': 2,
+          'bordercolor': "gray",
+          'steps': [
+              {'range': [0, 20], 'color': 'green'},
+              {'range': [20, 40], 'color': 'lightgreen'},
+              {'range': [40, 60], 'color': 'yellow'},
+              {'range': [60,80], 'color': 'orange'},
+              {'range': [80,100], 'color': 'red'}],
+          }))
+  
+  fig.update_layout(
+      font={'color': "black", 'family': "Arial"},
+      xaxis={'showgrid': False, 'range':[-1,1]},
+      yaxis={'showgrid': False, 'range':[0,1]},
+      # plot_bgcolor='rgba(0,0,0,0)'
+      )
+  
   if st.button("Realizar Otro Analisis"):
     st.rerun()
 
