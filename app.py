@@ -36,8 +36,6 @@ NOMBREGARA_index_v=NOMBREGARA_index[tgarantia]
 load_xg=pickle.load(open('credit_risk_model2.pkl','rb'))
 if st.button("Calcular Riesgo de Crédito"):
   ind_cap = capital/salario
-  
-  st.write("{:0,.2f}".format(float(ind_cap)))
   plazo=float(plazo)
   capital=float(capital)
   edad=float(edad)
@@ -52,12 +50,12 @@ if st.button("Calcular Riesgo de Crédito"):
   TIPOGARANT_index_v=float(TIPOGARANT_index_v)
   NOMBREGARA_index_v=float(NOMBREGARA_index_v)
   vp=[[cap_des,salario,mun_index_v,plazo,gasto_financiero,emp_index_v,NOMBREDEST_index_v,edad,antiguedad,ind_cap,TIPOGARANT_index_v,capital,NOMBREGARA_index_v]]
-  st.write(vp)
-  st.write(load_xg.predict(np.array(vp)))
+  x
   if (load_xg.predict(np.array(vp))==1):
     p1='Solicitud Credito Rechazada'
   else:
     p1='Solicitud Credito Aprobada'
+  st.subheader(p1)
   p2=load_xg.predict_proba(np.array(vp))[0, 1]
   
   fig = go.Figure(go.Indicator(
