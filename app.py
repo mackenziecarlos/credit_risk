@@ -51,9 +51,9 @@ if st.button("Calcular Riesgo de Crédito"):
   NOMBREGARA_index_v=float(NOMBREGARA_index_v)
   vp=[[cap_des,salario,mun_index_v,plazo,gasto_financiero,emp_index_v,NOMBREDEST_index_v,edad,antiguedad,ind_cap,TIPOGARANT_index_v,capital,NOMBREGARA_index_v]]
   if (load_xg.predict(np.array(vp))==1):
-    st.markdown(''':red[Solicitud Credito Rechazada]''')
+    st.markdown(''':red**[Solicitud Credito Rechazada]**''')
   else:
-    st.markdown(''':green[Solicitud Credito Aprobada]''')
+    st.markdown(''':green**[Solicitud Credito Aprobada]**''')
   p2=load_xg.predict_proba(np.array(vp))[0, 1]
   fig = go.Figure(go.Indicator(
       mode = "gauge+number",
