@@ -4,7 +4,7 @@ import pickle
 import pandas as pd
 from xgboost import XGBClassifier
 import plotly.graph_objects as go
-st.title("Modelo de Análisis de Riesgo de Crédito FEMAP")
+st.title("Modelo de Análisis de Riesgo de Crédito")
 st.divider()
 salario = st.number_input('Salario Mensual')
 st.write("{:0,.0f}".format(float(salario)))
